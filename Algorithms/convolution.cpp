@@ -21,7 +21,7 @@ vector<int> convo1d(vector<int>& input, vector<int>& response) {
 	return result;
 }
 
-vector<vector<int>> convo2d(vector<vector<int>>& input, vector<vector<int>>& kernel, size_t input_row, size_t input_col, size_t kernel_row, size_t kernel_col) {
+vector<vector<int>> convo2d(vector<vector<int>>& input, vector<vector<int>>& kernel, int input_row, int input_col, int kernel_row, int kernel_col) {
 
 	vector<vector<int>> result;
 	int counter = 0;
@@ -29,6 +29,7 @@ vector<vector<int>> convo2d(vector<vector<int>>& input, vector<vector<int>>& ker
 		vector<int> temp;
 		for (int j = kernel_col / 2; j <= input_row - kernel_col / 2 - 1; ++j) {
 			int sum = 0;
+
 
 			for (int k = 0; k < kernel_row; ++k) {
 				size_t kernel_row_iterator = kernel_row - 1 - k;
@@ -50,7 +51,6 @@ vector<vector<int>> convo2d(vector<vector<int>>& input, vector<vector<int>>& ker
 		}
 		result.push_back(temp);
 	}
-
 	return result;
 }
 
